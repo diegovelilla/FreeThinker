@@ -19,10 +19,6 @@ def basic_calculator(input_list):
 
     Returns:
     (str): The formatted result of the operation or an error message if something goes wrong.
-
-    Raises:
-    Exception: If an error occurs during the operation (e.g., division by zero).
-    ValueError: If an unsupported operation is requested or input is invalid.
     """
     # Clean and parse the input string
     try:
