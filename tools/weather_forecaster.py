@@ -14,12 +14,6 @@ def weather_forecaster(input_list):
 
     Returns:
     (str): The formatted weather or an error message if something goes wrong.
-
-    Raises:
-    Exception: General exception for unexpected errors.
-    ValueError: Raised if the input_list is empty or the city name is invalid.
-    KeyError: Raised if a required API key or a field in the response is missing.
-    requests.exceptions.RequestException: Raised for network-related errors.
     """
     try:
         CONFIG = dotenv_values("config/.env")
@@ -37,19 +31,9 @@ def weather_forecaster(input_list):
         city = input_list[0]
         BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
         url = BASE_URL + "appid=" + API_KEY + "&q=" + city + "&units=metric"
-
-        # Attempt to make a request to the API
         response = requests.get(url)
-        response.raise_for_status()  # Raises HTTPError for bad responses
-
         data = response.json()
 
-        # Check for valid weather data in the response
-        if "weather" not in data or "main" not in data:
-            raise KeyError(
-                "Unexpected response structure. Key information missing.")
-
-        # Format the response
         formatted_response = f"""
 Weather: {data["weather"][0]["description"]}.
 Temperature: {data["main"]["temp"]}°C
@@ -62,18 +46,5 @@ Sunset: {datetime.fromtimestamp(data["sys"]["sunset"]).strftime('%H:%M:%S')}
 """
         return formatted_response
 
-    except requests.exceptions.RequestException as e:
-        # Handle network-related errors
-        raise Exception(f"Network error occurred: {e}")
-
-    except ValueError as e:
-        # Handle invalid input_list or city name
-        raise ValueError(f"Invalid input: {e}")
-
-    except KeyError as e:
-        # Handle missing API key or unexpected response structure
-        raise KeyError(f"Key error: {e}")
-
-    except Exception as e:
-        # Handle any other unexpected errors
-        raise Exception(f"An unexpected error occurred: {e}")
+    except Exceptions as e:
+        return f"Error occurred: {e}"
