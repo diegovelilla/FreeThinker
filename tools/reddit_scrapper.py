@@ -16,18 +16,6 @@ def reddit_scrapper(input_list):
 
     Returns:
     (str): The formatted weather or an error message if something goes wrong.
-
-    Raises:
-    praw.exceptions.PRAWException: For general PRAW-related errors.
-    prawcore.exceptions.RequestException: If there is a network issue while making a request to Reddit.
-    prawcore.exceptions.ResponseException: If Reddit returns an invalid response.
-    prawcore.exceptions.ServerError: If Reddit's servers experience an issue (5xx errors).
-    prawcore.exceptions.Forbidden: If access to the specified subreddit is forbidden.
-    prawcore.exceptions.NotFound: If the specified subreddit does not exist.
-    praw.exceptions.RedditAPIException: For API errors like rate limiting.
-    ValueError: If the input list is incorrectly formatted.
-    TypeError: If the input_list is not a list or contains incorrect types.
-    AttributeError: If there's an issue accessing attributes or methods.
     """
     CONFIG = dotenv_values("config/.env")
     subreddit_name = input_list[0]
