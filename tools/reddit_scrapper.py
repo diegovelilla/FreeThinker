@@ -52,35 +52,6 @@ def reddit_scrapper(input_list):
 
         return "\n\n".join(result) + "\n"
 
-    except prawcore.exceptions.RequestException as e:
-        return f"Network error occurred: {e}"
-
-    except prawcore.exceptions.ResponseException as e:
-        return f"Invalid response from Reddit: {e}"
-
-    except prawcore.exceptions.ServerError as e:
-        return f"Server error from Reddit: {e}"
-
-    except prawcore.exceptions.Forbidden as e:
-        return f"Access to subreddit is forbidden: {e}"
-
-    except prawcore.exceptions.NotFound as e:
-        return f"Subreddit not found: {e}"
-
-    except praw.exceptions.RedditAPIException as e:
-        return f"Reddit API error occurred: {e}"
-
-    except ValueError as e:
-        return f"Value error: {e}"
-
-    except TypeError as e:
-        return f"Type error: {e}"
-
-    except AttributeError as e:
-        return f"Attribute error: {e}"
-
-    except praw.exceptions.PRAWException as e:
-        return f"PRAW general error: {e}"
-
     except Exception as e:
-        return f"An unexpected error occurred: {e}"
+        return f"Error occurred: {e}"
+
