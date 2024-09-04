@@ -1,0 +1,5 @@
+termcolor
+groq
+python-dotenv
+huggingface-hub
+praw
