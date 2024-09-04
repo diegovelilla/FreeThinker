@@ -3,3 +3,4 @@ groq
 python-dotenv
 huggingface-hub
 praw
+bs4

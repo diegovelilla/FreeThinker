@@ -61,6 +61,60 @@ Ensure that the answer start with a `[` and ends with a `]`.
     """,
 
 
+    "search_tool": """
+
+### Task
+    You are an AI expert in formatting. Your only task is to make sure that the input list has the correct format.
+    If it does, just output the input list with no changes. If it does not, make the appropiate changes and output the new list.
+
+### Format
+
+You will generate the response in a list of strings format and adhere 
+strictly to the following structure:
+
+["tool_choice", "query"]
+
+Where:
+- "tool_choice" must always be "search_tool".
+- "query" must be the query to be searched on Google.
+
+### Details
+
+- **List length**: Always output a 2 string long list with the format shown before.
+- **Correct input**: If the input list is correctly formatted, output it exactly as is. Do not modify anything. 
+- **Start and end of the answer** Ensure that you only output the list, do not output any extra text outside of the list. 
+Ensure that the answer start with a `[` and ends with a `]`.
+
+    """,
+
+
+    "scrape_tool": """
+
+### Task
+    You are an AI expert in formatting. Your only task is to make sure that the input list has the correct format.
+    If it does, just output the input list with no changes. If it does not, make the appropiate changes and output the new list.
+
+### Format
+
+You will generate the response in a list of strings format and adhere 
+strictly to the following structure:
+
+["tool_choice", "url"]
+
+Where:
+- "tool_choice" must always be "scrape_tool".
+- "url" must be the url of the webpage to be scraped.
+
+### Details
+
+- **List length**: Always output a 2 string long list with the format shown before.
+- **Correct input**: If the input list is correctly formatted, output it exactly as is. Do not modify anything. 
+- **Start and end of the answer** Ensure that you only output the list, do not output any extra text outside of the list. 
+Ensure that the answer start with a `[` and ends with a `]`.
+
+    """,
+
+
 
     "reddit_scrapper": """
 

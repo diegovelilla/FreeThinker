@@ -63,14 +63,14 @@ To install the FreeThinker, follow these steps:
 ## Configuration:
 Set up your API keys in the **.env** file inside the config model:
 
-    HF_API_TOKEN=your_api_key_here
     GROQ_API_KEY=your_api_key_here
+    SERPER_API_KEY=your_api_key_here
 
 ## Usage:
 To use FreeThinker just run the following command:
 ```bash
-   python3 -m agent
-   ```
+python3 -m agent
+```
 In order to quit, just type **exit**.
 
 ## Toolbox:
@@ -78,6 +78,8 @@ Here are all the tools supported:
 - Basic_calculator: Performs basic binary math operations.
 - Weather_forecaster: Retrieves weather information on a given location. 
 - Reddit_scrapper: Scrapes a given subreddit for a number of posts.
+- Search_tool: Searches a given query on Google.
+- Scrape_tool: Scrapes a given webpage.
 
 ## Models
 The models used for this project are:
@@ -93,8 +95,6 @@ This is what I learned from this project:
 - Also the usage of examples of wrong outputs or a forbidden words part in the prompt improved the results.
 - Easing the answer by asking for a list instead of a dictionary since the models had problems formatting it correctly.
 - Using markdown instead of plain text for instructions really felt like an upgrade.
-
-
 
 ## License
 This project is licensed under the **Apache 2.0 License**. See the [LICENSE](https://github.com/diegovelilla/FreeThinker/blob/main/LICENSE) file for more details.

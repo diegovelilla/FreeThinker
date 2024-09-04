@@ -10,6 +10,8 @@ from models.llama_3_1_70B import llama_3_1_70B
 from tools.basic_calculator import basic_calculator
 from tools.weather_forecaster import weather_forecaster
 from tools.reddit_scrapper import reddit_scrapper
+from tools.scrape_tool import scrape_tool
+from tools.search_tool import search_tool
 
 
 class Agent:
@@ -121,7 +123,8 @@ class Agent:
 
 if __name__ == "__main__":
 
-    tools = [basic_calculator, weather_forecaster, reddit_scrapper]
+    tools = [basic_calculator, weather_forecaster,
+             reddit_scrapper, search_tool, scrape_tool]
     model = llama_3_1_70B
     model_name = "llama-3.1-70b-versatile"
 
