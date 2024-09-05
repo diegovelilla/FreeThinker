@@ -31,9 +31,6 @@ Welcome to the **FreeThinker** documentation. This AI agent is designed to autom
 ### `requirements.txt`
 This file lists all the Python packages required to run the project. It ensures that all necessary dependencies are installed for the project to function correctly.
 
-### `memory.txt`
-This file narrates the whole project progress and all the quality decisions made through it.
-
 ### `agent.py`
 This is the main file of the project and is the one that needs to be run in order to use FreeThinker.
 
