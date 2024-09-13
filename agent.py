@@ -52,11 +52,11 @@ class Agent:
         Returns:
         final_answer (list): The response from the model as a list.
         """
-        print("\nPreparing tools...")
+        # print("\nPreparing tools...")
         str_tools = self.prepare_tools()
         agent_system_prompt = agent_system_prompt_template.format(
             tools=str_tools)
-        print("Tools prepared.")
+        # print("Tools prepared.")
 
         model_instance = self.model(
             model_name=self.model_name,
@@ -65,8 +65,7 @@ class Agent:
 
         agent_response_str1 = model_instance.first_answer(prompt)
         agent_response_str1 = agent_response_str1.replace("'", '\'')
-        print(
-            f"My first answer is: {agent_response_str1}.")
+        #print(f"My first answer is: {agent_response_str1}.")
         try:
             agent_response_list = json.loads(agent_response_str1)
         except json.JSONDecodeError as e:
@@ -79,8 +78,7 @@ class Agent:
         agent_response_str2 = agent_response_str2.replace("'", '\'')
         corrected_json_string = re.sub(
             r"(?<!\w)'|'(?!\w)", '"', agent_response_str2)
-        print(
-            f"My second answer is: {corrected_json_string}.")
+        #print(f"My second answer is: {corrected_json_string}.")
         try:
             agent_response_list = json.loads(corrected_json_string)
         except json.JSONDecodeError as e:
@@ -113,12 +111,16 @@ class Agent:
                 response = tool(tool_input)
 
                 print(
-                    colored(f'{response}Answered with {tool_choice}.', 'green'))
+                    colored(f'\n{response}', 'green'))
+                print(colored(f'Tool used: {tool_choice}\n', 'yellow'))
+
                 return
 
-        # No tool
+        # Answer by model
         print(
-            colored(f'\nThe answer is: {tool_input[0]}\nAnswered with no_tool.', 'cyan'))
+            colored(f'\n{tool_input[0]}', 'green'))
+        print(
+            colored(f'Model used: {model_name}\n', 'yellow'))
 
 
 if __name__ == "__main__":
@@ -135,7 +137,7 @@ if __name__ == "__main__":
                   model_name=model_name)
 
     while True:
-        prompt = input("Ask me anything: ")
+        prompt = input(colored("Ask me anything: ", 'cyan'))
         if prompt.lower() == "exit":
             break
 
