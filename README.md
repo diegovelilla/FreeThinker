@@ -60,8 +60,11 @@ To install the FreeThinker, follow these steps:
 ## Configuration:
 Set up your API keys in the **.env** file inside the config model:
 
-    GROQ_API_KEY=your_api_key_here
-    SERPER_API_KEY=your_api_key_here
+    GROQ_API_KEY=your_api_key_here      || Get it on: https://console.groq.com/keys
+    SERPER_API_KEY=your_api_key_here    || Get it on: https://serper.dev/
+    CLIENT_ID=your_api_key_here         || REDDIT     
+    CLIENT_SECRET=your_api_key_here     || REDDIT
+    WEATHER_API_KEY=your_api_key_here   || Get it on: https://openweathermap.org/api
 
 ## Usage:
 To use FreeThinker just run the following command:
