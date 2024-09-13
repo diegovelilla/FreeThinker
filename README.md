@@ -2,7 +2,11 @@
 
 FreeThinker is an AI agent that uses free of charge API open source LLMs in order to automatize tasks. That meaning that you don't required pay-per-token API keys to run it.
 
-## Index
+## Other contributors
+    
+<img src="https://avatars.githubusercontent.com/LucaTufariello" alt="Luca Tufariello Logo" width="25" style="border-radius: 50%;" />  **[Luca Tufariello](https://github.com/LucaTufariello)**
+
+## Table of contents
 1. [Overview](#overview)
 2. [Features](#features)
 3. [Files](#files)
