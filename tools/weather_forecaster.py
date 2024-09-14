@@ -34,8 +34,8 @@ def weather_forecaster(input_list):
         response = requests.get(url)
         data = response.json()
 
-        formatted_response = f"""
-Weather: {data["weather"][0]["description"]}.
+        formatted_response = f""" 
+Weather: {data["weather"][0]["description"]}
 Temperature: {data["main"]["temp"]}°C
 Feels like: {data["main"]["feels_like"]}°C
 Min temperature: {data["main"]["temp_min"]}°C
@@ -46,5 +46,5 @@ Sunset: {datetime.fromtimestamp(data["sys"]["sunset"]).strftime('%H:%M:%S')}
 """
         return formatted_response
 
-    except Exceptions as e:
+    except Exception as e:
         return f"Error occurred: {e}"
