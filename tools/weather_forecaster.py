@@ -31,7 +31,7 @@ def weather_forecaster(input_list):
         city = input_list[0]
         BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
         url = BASE_URL + "appid=" + API_KEY + "&q=" + city + "&units=metric"
-        response = requests.get(url)
+        response = requests.get(url, timeout=30)
         data = response.json()
 
         formatted_response = f""" 
